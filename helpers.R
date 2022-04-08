@@ -1,0 +1,1 @@
+config <- config::get(file = "./conf/endpoints.yml", use_parent = FALSE)

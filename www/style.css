@@ -1,0 +1,7 @@
+#title {
+color: red;
+}
+#tabla_carreras .table.dataTable tbody td.active, .table.dataTable tbody tr.active td {
+background-color: rgba(0,0,0,0.05) !important;
+color: black !important;
+}

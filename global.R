@@ -1,0 +1,8 @@
+library(shiny)
+library(RSQLite)
+library(shinyalert)
+library(DT)
+library(dplyr)
+source("modules.R")
+source("helpers.R")
+source("./data/metodos.R")
