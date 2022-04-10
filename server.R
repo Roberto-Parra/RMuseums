@@ -13,10 +13,20 @@ exhibition<-reactive({
         req(input$`museos-select`)
         resp<-exibiciones(museoSeleccionado()$id)
 })
+sponsors<-reactive({
+        resp<-sponsor()
+})
+
 exhibitionSeleccionada<-reactive({
         req(input$`exhibicion-select`)
         resp<-exhibition() |>
                 filter(name == input$`exhibicion-select`)
+})
+sponsorseleccionado<-reactive({
+        req(input$`exhibicion-select`)
+        resp<-sponsors() |>
+                filter(exhibition.name == input$`exhibicion-select`)
+        
 })
 obras<-reactive({
         req(input$`exhibicion-select`)
@@ -38,7 +48,8 @@ observeEvent(museoSeleccionado(),{
 observeEvent(exhibitionSeleccionada(),{
         textServer("descripcion2",exhibitionSeleccionada()$description)
         selectServer("artwork",c("Seleccione una" = "",obras()$name))
-        
+        textServer("sponsor",sponsorseleccionado()$name)
+        textServer("descripcion3",sponsorseleccionado()$description)
         
 })
         
